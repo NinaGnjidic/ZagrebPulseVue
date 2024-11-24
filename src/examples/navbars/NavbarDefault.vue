@@ -17,29 +17,29 @@ const props = defineProps({
     default: () => ({
       route: "https://www.creative-tim.com/product/vue-material-kit",
       color: "bg-gradient-success",
-      label: "Free Download"
-    })
+      label: "Free Download",
+    }),
   },
   transparent: {
     type: Boolean,
-    default: false
+    default: false,
   },
   light: {
     type: Boolean,
-    default: false
+    default: false,
   },
   dark: {
     type: Boolean,
-    default: false
+    default: false,
   },
   sticky: {
     type: Boolean,
-    default: false
+    default: false,
   },
   darkText: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 // set arrow  color
@@ -98,7 +98,7 @@ watch(
       'my-3 blur border-radius-lg z-index-3 py-2 shadow py-2 start-0 end-0 mx-4 position-absolute mt-1':
         props.sticky,
       'navbar-light bg-white py-3': props.light,
-      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark
+      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark,
     }"
   >
     <div
@@ -108,37 +108,77 @@ watch(
           : 'container-fluid px-0'
       "
     >
-      <RouterLink
-        class="navbar-brand d-none d-md-block"
-        :class="[
-          (props.transparent && textDark.value) || !props.transparent
-            ? 'text-dark font-weight-bolder ms-sm-3'
-            : 'text-white font-weight-bolder ms-sm-3'
-        ]"
-        :to="{ name: 'presentation' }"
-        rel="tooltip"
-        title="Designed and Coded by Creative Tim"
-        data-placement="bottom"
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
       >
-        Material Kit 2
-      </RouterLink>
-      <RouterLink
-        class="navbar-brand d-block d-md-none"
-        :class="
-          props.transparent || props.dark
-            ? 'text-white'
-            : 'font-weight-bolder ms-sm-3'
-        "
-        to="/"
-        rel="tooltip"
-        title="Designed and Coded by Creative Tim"
-        data-placement="bottom"
-        :style="{ 
-        backgroundImage: 'url(' + imageUrl + ')'
-        }"
-      >
-      </RouterLink>
-      
+        <line
+          x1="6"
+          y1="10"
+          x2="6"
+          y2="20"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <circle cx="6" cy="6" r="2" fill="currentColor" />
+        <line
+          x1="12"
+          y1="4"
+          x2="12"
+          y2="20"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <circle cx="12" cy="2" r="2" fill="currentColor" />
+        <line
+          x1="18"
+          y1="8"
+          x2="18"
+          y2="20"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+        <circle cx="18" cy="4" r="2" fill="currentColor" />
+      </svg>
+
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Traži"
+          aria-label="Search"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          style="margin-top: 10px"
+        >
+          <circle
+            cx="10"
+            cy="10"
+            r="6"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <line
+            x1="15"
+            y1="15"
+            x2="20"
+            y2="20"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </form>
       <button
         class="navbar-toggler shadow-none ms-2"
         type="button"
@@ -147,13 +187,27 @@ watch(
         aria-controls="navigation"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        style="border: none"
       >
-        <span class="navbar-toggler-icon mt-2">
-          <span class="navbar-toggler-bar bar1"></span>
-          <span class="navbar-toggler-bar bar2"></span>
-          <span class="navbar-toggler-bar bar3"></span>
-        </span>
+        Prijavi se
       </button>
+      <!--svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+    >
+        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
+        <path
+          d="M4 20c0-4 4-6 8-6s8 2 8 6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg-->
+
       <div
         class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0"
         id="navigation"
